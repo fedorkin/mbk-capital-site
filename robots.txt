@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /back-office.html
+Sitemap: https://www.mbkcapital.com/sitemap.xml
