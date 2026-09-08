@@ -1,13 +1,31 @@
 # MBK Capital — corporate website
 
 Static HTML site for MBK Capital, built from the MBK Capital Brand Guidelines and the
-Brand Book Creative Brief. No build step, no framework: upload the folder to any static
-host (S3/CloudFront, Netlify, Cloudflare Pages, nginx) and it works.
+Brand Book Creative Brief. No framework and no runtime dependencies: upload the folder to
+any static host (S3/CloudFront, Netlify, Cloudflare Pages, GitHub Pages, nginx) and it works.
+
+## Languages and how to edit copy
+
+The site is bilingual: English at the root (`/about.html`) and Russian under `/ru/`
+(`/ru/about.html`). Every page links to its counterpart with a small EN/RU switch in the
+header and carries `hreflang` tags for search engines.
+
+All copy lives in `tools/build.py`, in two dictionaries (`CONTENT["en"]` and
+`CONTENT["ru"]`) with identical keys. To change text, edit the dictionary and rebuild:
+
+```bash
+python3 tools/build.py
+```
+
+The script rewrites every HTML page plus `sitemap.xml` and `robots.txt`. Do not edit the
+generated HTML by hand; the next build would overwrite it. `DRAFT = True` at the top of the
+script adds the `noindex` tag to every page; set it to `False` for launch.
 
 ## Structure
 
 ```
-index.html            Home
+index.html            Home (English); the same set of pages exists under ru/
+tools/build.py        Page generator with all copy in both languages
 about.html            About: purpose, mission and vision, values, personality
 services.html         Six service areas with anchors (#brokerage, #advice, #portfolio, #research, #risk, #family-office)
 clients.html          Audiences and the onboarding sequence
@@ -25,8 +43,7 @@ assets/fonts/         Self-hosted Marcellus and Tenor Sans (OFL)
 favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 ```
 
-Header and footer are repeated in every page. When you change navigation or footer text,
-update all HTML files.
+Header and footer are generated into every page from `tools/build.py`.
 
 ## Portal links
 
@@ -78,9 +95,10 @@ The consent banner stores the visitor's choice in `localStorage` under
 | Light Harvest Gold | `#E0B673` |
 
 Typography: the brand's display face, Classico, is a commercial font. Until it is licensed
-for web use the site uses Marcellus (self-hosted) for headings and Tenor Sans (the brand's
-body face, self-hosted) for text. To switch to Classico, add its `@font-face` rules and change
-`--font-display` in `main.css`.
+for web use the site uses Marcellus (self-hosted) for English headings and Forum (self-hosted,
+Cyrillic-capable) for Russian headings; Tenor Sans (the brand's body face, self-hosted, Latin
+and Cyrillic subsets) is used for text. To switch to Classico, add its `@font-face` rules and
+change `--font-display` in `main.css` (there is a separate override for `html[lang="ru"]`).
 
 Photography: the images come from the brand book and are rendered as duotones to match it.
 Confirm the licence for each photo before launch.

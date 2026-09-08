@@ -64,6 +64,8 @@
   if (form) {
     var endpoint = form.getAttribute("data-endpoint");
     var status = document.getElementById("form-status");
+    var noEndpointMsg = form.getAttribute("data-msg-no-endpoint") ||
+      "The enquiry form is not connected to a mail service yet. Please email us at info@mbkcapital.com.";
     if (endpoint) {
       form.setAttribute("action", endpoint);
     } else {
@@ -71,8 +73,7 @@
         e.preventDefault();
         if (status) {
           status.hidden = false;
-          status.textContent =
-            "The enquiry form is not connected to a mail service yet. Please email us at info@mbkcapital.com.";
+          status.textContent = noEndpointMsg;
         }
       });
     }
