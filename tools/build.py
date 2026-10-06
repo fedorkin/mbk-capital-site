@@ -29,7 +29,8 @@ def ph(text):
 # Shared content
 # ---------------------------------------------------------------------------
 NAV = [("about.html", "About"), ("services.html", "Services"), ("markets.html", "Markets"),
-       ("clients.html", "Clients"), ("regulation.html", "Regulation"), ("contact.html", "Contact")]
+       ("pricing.html", "Pricing"), ("clients.html", "Clients"), ("regulation.html", "Regulation"),
+       ("contact.html", "Contact")]
 FOOTER_COMPANY = [("about.html", "About"), ("services.html", "Services"), ("markets.html", "Markets"),
                   ("pricing.html", "Pricing"), ("clients.html", "Clients"), ("contact.html", "Contact")]
 FOOTER_REG = [("regulation.html", "Regulatory information"), ("regulation.html#protection", "Client protection"),
@@ -291,7 +292,7 @@ def head(title, desc, path):
 def header(path):
     items = ""
     for href, label in NAV:
-        cur = ' aria-current="page"' if href == path or (href == "markets.html" and path == "pricing.html") else ""
+        cur = ' aria-current="page"' if href == path else ""
         items += f'        <li><a class="nav__link" href="{href}"{cur}>{label}</a></li>\n'
     return f'''<header class="site-header">
   <div class="container site-header__inner">
