@@ -4,14 +4,10 @@ Static HTML site for MBK Capital, built from the MBK Capital Brand Guidelines an
 Brand Book Creative Brief. No framework and no runtime dependencies: upload the folder to
 any static host (S3/CloudFront, Netlify, Cloudflare Pages, GitHub Pages, nginx) and it works.
 
-## Languages and how to edit copy
+## How to edit copy
 
-The site is bilingual: English at the root (`/about.html`) and Russian under `/ru/`
-(`/ru/about.html`). Every page links to its counterpart with a small EN/RU switch in the
-header and carries `hreflang` tags for search engines.
-
-All copy lives in `tools/build.py`, in two dictionaries (`CONTENT["en"]` and
-`CONTENT["ru"]`) with identical keys. To change text, edit the dictionary and rebuild:
+The site is English only. All copy lives in `tools/build.py` (the `SERVICES`, `MARKETS`,
+`PRICING_TABLES` lists and the `build_*` functions). To change text, edit the script and rebuild:
 
 ```bash
 python3 tools/build.py
@@ -24,10 +20,12 @@ script adds the `noindex` tag to every page; set it to `False` for launch.
 ## Structure
 
 ```
-index.html            Home (English); the same set of pages exists under ru/
-tools/build.py        Page generator with all copy in both languages
+index.html            Home
+tools/build.py        Page generator with all copy
 about.html            About: purpose, mission and vision, values, personality
 services.html         Six service areas with anchors (#brokerage, #advice, #portfolio, #research, #risk, #family-office)
+markets.html          Asset classes as tabs (#stocks, #currencies, #futures, #options, #bonds, #structured-notes) with venue tables
+pricing.html          Commission schedule, account and custody fees, currency conversion, exclusions
 clients.html          Audiences and the onboarding sequence
 regulation.html       Regulatory status, MiFID II framework, client protection, complaints, documents, risk warning
 legal.html            Terms of use, privacy notice, cookie policy
@@ -39,7 +37,7 @@ assets/css/main.css   All styles (design tokens at the top)
 assets/js/main.js     Mobile menu, cookie consent, enquiry form hook
 assets/img/           Brand imagery as steel-blue duotones, 1000w and 1920w, JPEG and WebP; og.jpg for link previews
 assets/logo/          Logo SVGs (colour, on-dark, white, navy), monogram, favicons
-assets/fonts/         Self-hosted Marcellus and Tenor Sans (OFL)
+assets/fonts/         Classico Regular and Bold (brand package, WOFF2) and Tenor Sans (OFL)
 favicon.svg, site.webmanifest, robots.txt, sitemap.xml
 ```
 
@@ -65,6 +63,8 @@ the content is final.
 * Data Protection Officer
 * Regulatory document PDFs (regulation page, "Documents" table)
 * Analytics tool in the cookie policy
+* Every commission, spread, fee and venue count on `markets.html` and `pricing.html`. The
+  venue lists are indicative and need to match the executing brokers actually contracted.
 
 Compliance should review `regulation.html`, `legal.html`, the footer risk warning and any
 statement about services before publication. The brief requires that public statements match
@@ -94,13 +94,12 @@ The consent banner stores the visitor's choice in `localStorage` under
 | Deep Bronze Amber | `#85601F` |
 | Light Harvest Gold | `#E0B673` |
 
-Typography: the brand's display face, Classico, is a commercial font. Until it is licensed
-for web use the site uses Marcellus (self-hosted) for English headings and Forum (self-hosted,
-Cyrillic-capable) for Russian headings; Tenor Sans (the brand's body face, self-hosted, Latin
-and Cyrillic subsets) is used for text. To switch to Classico, add its `@font-face` rules and
-change `--font-display` in `main.css` (there is a separate override for `html[lang="ru"]`).
+Typography: Classico (Regular and Bold) from the brand package is used for headings, in line
+with the brand guidelines (H1 to H3 in Classico Bold), and Tenor Sans for body text. Both are
+self-hosted as WOFF2. Confirm that the Classico licence covers web embedding before launch.
 
-Photography: the images come from the brand book and are rendered as duotones to match it.
+Photography: the images are the duotone JPEGs delivered with the brand package (Images
+folder, 8000 px), resized to 1000, 1920 and (for the home hero) 2560 px with light sharpening.
 Confirm the licence for each photo before launch.
 
 Home hero: the nautilus photo is shown without an overlay for now. A drawn-line effect

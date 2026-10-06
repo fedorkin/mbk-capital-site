@@ -1,67 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://www.mbkcapital.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/about.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/about.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/services.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/services.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/services.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/services.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/services.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/services.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/clients.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/clients.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/clients.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/clients.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/clients.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/clients.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/regulation.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/regulation.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/regulation.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/regulation.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/regulation.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/regulation.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/legal.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/legal.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/legal.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/legal.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/contact.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/contact.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/front-office.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/front-office.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/front-office.html"/>
-  </url>
-  <url><loc>https://www.mbkcapital.com/ru/front-office.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mbkcapital.com/front-office.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.mbkcapital.com/ru/front-office.html"/>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.mbkcapital.com/</loc></url>
+  <url><loc>https://www.mbkcapital.com/about.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/services.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/markets.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/pricing.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/clients.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/regulation.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/legal.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/contact.html</loc></url>
+  <url><loc>https://www.mbkcapital.com/front-office.html</loc></url>
 </urlset>

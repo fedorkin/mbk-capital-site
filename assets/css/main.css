@@ -1,25 +1,23 @@
 /* ==========================================================================
    MBK Capital — main stylesheet
    Tokens follow the MBK Capital Brand Guidelines (colours, type roles).
-   Display face: Marcellus stands in for Classico until Classico is licensed
-   for web use; swap the @font-face and --font-display to change it.
+   Display face: Classico (Regular and Bold) from the brand package; body: Tenor Sans.
    ========================================================================== */
 
+/* Classico (brand display face), supplied with the brand package. */
 @font-face {
-  font-family: "Marcellus";
+  font-family: "Classico";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/marcellus-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("../fonts/classico-regular.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Marcellus";
+  font-family: "Classico";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: swap;
-  src: url("../fonts/marcellus-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("../fonts/classico-bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Tenor Sans";
@@ -36,48 +34,6 @@
   font-display: swap;
   src: url("../fonts/tenorsans-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-@font-face {
-  font-family: "Tenor Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/tenorsans-cyrillic.woff2") format("woff2");
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* Forum: Cyrillic-capable display face used on the Russian pages (Marcellus has no Cyrillic). */
-@font-face {
-  font-family: "Forum";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/forum-cyrillic-ext.woff2") format("woff2");
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-@font-face {
-  font-family: "Forum";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/forum-cyrillic.woff2") format("woff2");
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-@font-face {
-  font-family: "Forum";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/forum-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Forum";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/forum-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* --------------------------------------------------------------------------
@@ -104,7 +60,7 @@
   --line-dark: rgba(255, 255, 255, 0.12);
 
   /* Type */
-  --font-display: "Marcellus", "Classico", Georgia, "Times New Roman", serif;
+  --font-display: "Classico", Georgia, "Times New Roman", serif;
   --font-body: "Tenor Sans", "Optima", "Gill Sans", -apple-system, "Segoe UI", sans-serif;
   --fs-xs: 0.8125rem;
   --fs-s: 0.9375rem;
@@ -119,10 +75,6 @@
   --gutter: clamp(20px, 4.5vw, 56px);
   --space-section: clamp(64px, 9vw, 128px);
   --header-h: 76px;
-}
-
-html[lang="ru"] {
-  --font-display: "Forum", "Marcellus", Georgia, "Times New Roman", serif;
 }
 
 /* --------------------------------------------------------------------------
@@ -160,11 +112,12 @@ a {
   text-underline-offset: 0.22em;
 }
 
+/* Brand hierarchy: headings are set in Classico Bold, body in Tenor Sans. */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.12;
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
   margin: 0 0 0.5em;
 }
 h1 { font-size: var(--fs-3xl); }
@@ -316,20 +269,6 @@ p:last-child { margin-bottom: 0; }
   border-bottom-color: var(--gold);
 }
 
-.lang-switch {
-  display: inline-block;
-  font-size: var(--fs-xs);
-  letter-spacing: 0.1em;
-  color: #D3DCE4;
-  text-decoration: none;
-  padding: 7px 9px;
-  border: 1px solid var(--line-dark);
-  border-radius: 2px;
-  line-height: 1;
-  transition: color 0.2s, border-color 0.2s;
-}
-.lang-switch:hover { color: var(--white); border-color: var(--harvest); }
-
 .nav-toggle {
   display: none;
   align-items: center;
@@ -366,7 +305,7 @@ p:last-child { margin-bottom: 0; }
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar::before { transform: translateY(6px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar::after { transform: translateY(-6px) rotate(-45deg); }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .nav-toggle { display: inline-flex; }
   .nav {
     position: fixed;
@@ -443,9 +382,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(90deg, var(--navy) 0%, rgba(4, 21, 34, 0.6) 16%, rgba(4, 21, 34, 0) 46%),
-    linear-gradient(0deg, rgba(4, 21, 34, 0.45) 0%, rgba(4, 21, 34, 0) 45%);
+  background: linear-gradient(90deg, var(--navy) 0%, rgba(4, 21, 34, 0.35) 12%, rgba(4, 21, 34, 0) 32%);
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(14px); }
@@ -499,6 +436,7 @@ p:last-child { margin-bottom: 0; }
 
 .statement {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: var(--fs-2xl);
   line-height: 1.2;
   margin: 0;
@@ -518,6 +456,7 @@ p:last-child { margin-bottom: 0; }
 }
 .dl__row dt {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: var(--fs-xl);
   line-height: 1.15;
   margin: 0;
@@ -717,7 +656,7 @@ p:last-child { margin-bottom: 0; }
 .contact-list li strong {
   display: block;
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 700;
   font-size: var(--fs-l);
   margin-bottom: 4px;
 }
@@ -896,6 +835,98 @@ p:last-child { margin-bottom: 0; }
   font-size: var(--fs-s);
   color: #D3DCE4;
 }
+
+/* --------------------------------------------------------------------------
+   Markets and pricing
+   -------------------------------------------------------------------------- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  margin-top: 32px;
+}
+.stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  line-height: 1.05;
+  color: var(--harvest);
+}
+.stat > span { font-size: var(--fs-s); color: var(--muted-dark); }
+.page-hero .actions { margin-top: 28px; }
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+.tabs a {
+  display: inline-block;
+  padding: 16px 14px 14px;
+  margin-bottom: -1px;
+  font-size: var(--fs-s);
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tabs a:hover { color: var(--text); }
+.tabs a[aria-selected="true"] { color: var(--text); border-bottom-color: var(--gold); }
+.tab-panel { padding-top: clamp(32px, 5vw, 56px); }
+.tab-panel[hidden] { display: none; }
+.tab-panel__head { margin-bottom: clamp(24px, 4vw, 40px); }
+.tab-panel__head .lede { max-width: 60ch; }
+.tab-panel .prose ul { columns: 2; column-gap: 40px; }
+@media (max-width: 700px) { .tab-panel .prose ul { columns: 1; } }
+
+.market-table { width: 100%; border-collapse: collapse; font-size: var(--fs-s); }
+.market-table th, .market-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.market-table th { font-weight: 400; color: var(--muted); font-size: var(--fs-xs); letter-spacing: 0.02em; }
+.market-table td:first-child { color: var(--text); }
+.market-table td { color: var(--muted); }
+.market-table .num { white-space: nowrap; }
+.table-note { font-size: var(--fs-xs); color: var(--muted); margin-top: 12px; }
+
+.link-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.link-card {
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.link-card:hover { border-color: var(--gold); }
+.link-card h3 { font-size: var(--fs-l); margin-bottom: 0.35em; }
+.link-card p { margin: 0; color: var(--muted); font-size: var(--fs-s); }
+.section--navy .link-card { border-color: var(--line-dark); }
+.section--navy .link-card p { color: var(--muted-dark); }
+
+.price-table { width: 100%; border-collapse: collapse; font-size: var(--fs-s); }
+.price-table th, .price-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.price-table th { font-weight: 400; color: var(--muted); font-size: var(--fs-xs); letter-spacing: 0.02em; }
+.price-table td:first-child { color: var(--text); }
+.price-table td { color: var(--muted); }
+.price-table .num { white-space: nowrap; color: var(--text); }
 
 /* Print */
 @media print {

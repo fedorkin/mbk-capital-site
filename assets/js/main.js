@@ -29,8 +29,52 @@
       }
     });
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 900) closeNav();
+      if (window.innerWidth > 1024) closeNav();
     });
+  }
+
+  /* Markets tabs ------------------------------------------------------ */
+  var tablist = document.querySelector("[data-tabs]");
+  if (tablist) {
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll("[role=tab]"));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+
+    function select(tab, focus) {
+      tabs.forEach(function (t, i) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.setAttribute("tabindex", on ? "0" : "-1");
+        if (panels[i]) panels[i].hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function (e) {
+        e.preventDefault();
+        select(tab, false);
+        if (history.replaceState) history.replaceState(null, "", tab.getAttribute("href"));
+      });
+      tab.addEventListener("keydown", function (e) {
+        var j = i;
+        if (e.key === "ArrowRight") j = (i + 1) % tabs.length;
+        else if (e.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === "Home") j = 0;
+        else if (e.key === "End") j = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        select(tabs[j], true);
+        if (history.replaceState) history.replaceState(null, "", tabs[j].getAttribute("href"));
+      });
+    });
+
+    function fromHash() {
+      var id = (location.hash || "").slice(1);
+      var match = tabs.filter(function (t) { return t.getAttribute("aria-controls") === id; })[0];
+      select(match || tabs[0], false);
+    }
+    window.addEventListener("hashchange", fromHash);
+    fromHash();
   }
 
   /* Cookie consent ----------------------------------------------------- */
